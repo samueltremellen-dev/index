@@ -400,11 +400,13 @@
       document.getElementById('clock').textContent =
         new Date().toLocaleTimeString('en-AU', { hour12: false });
     }
-var HW_config = {
-  selector: ".headway-badge",
-  account:  "yEPaOJ"
-}
-  </script>
-  <script async src="https://cdn.headwayapp.co/widget.js"></script>
+    <script src="//cdn.headwayapp.co/widget.js"></script>
+<script>
+  var config = {
+    selector: ".headway-badge",
+    account: "yEPaOJ"
+  };
+  Headway.init(config);
+</script>
 </body>
 </html>
