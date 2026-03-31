@@ -301,10 +301,11 @@
 </head>
 <body>
 
-  <header>
-    <h1>Sam Tremellen</h1>
-    <span class="tag">v1.0.0</span>
-  </header>
+ <header>
+  <h1>Sam Tremellen</h1>
+  <span class="tag">v1.0.0</span>
+  <div class="headway-badge"></div>  <!-- ADD THIS LINE -->
+</header>
 
   <main>
 
@@ -400,14 +401,10 @@
     }
     updateClock();
     setInterval(updateClock, 1000);
-  </script>
-  <script>
-    // @see https://docs.headwayapp.co/widget for more configuration options.
-    var HW_config = {
-      selector: "body",
-      account:  "yEPaOJ",
-      forceWidget: true
-    }
+var HW_config = {
+  selector: ".headway-badge",
+  account:  "yEPaOJ"
+}
   </script>
   <script async src="https://cdn.headwayapp.co/widget.js"></script>
 </body>
