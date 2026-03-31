@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- 1. Load the Headway library first -->
+<script src="https://cdn.headwayapp.co/widget.js" async></script>
+
+<!-- 2. Initialize the widget -->
+<script>
+  // Use a check to ensure Headway is loaded if the script is async
+  window.addEventListener('load', function() {
+    var config = {
+      selector: ".headway-badge",
+      account: "yEPaOJ"
+    };
+    if (window.Headway) {
+      Headway.init(config);
+    }
+  });
+</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sam Tremellen</title>
