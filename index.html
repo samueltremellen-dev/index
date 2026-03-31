@@ -400,11 +400,14 @@
         new Date().toLocaleTimeString('en-AU', { hour12: false });
     }
     updateClock();
-    setInterval(updateClock, 1000);
-var HW_config = {
-  selector: ".headway-badge",
-  account:  "yEPaOJ"
-}
+  </script>
+
+  <script>
+    // @see https://docs.headwayapp.co/widget for more configuration options.
+    var HW_config = {
+      selector: ".headway-badge",
+      account:  "yEPaOJ"
+    }
   </script>
   <script async src="https://cdn.headwayapp.co/widget.js"></script>
 </body>
