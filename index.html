@@ -1,22 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 1. Load the Headway library first -->
-<script src="https://cdn.headwayapp.co/widget.js" async></script>
-
-<!-- 2. Initialize the widget -->
-<script>
-  // Use a check to ensure Headway is loaded if the script is async
-  window.addEventListener('load', function() {
-    var config = {
-      selector: ".headway-badge",
-      account: "yEPaOJ"
-    };
-    if (window.Headway) {
-      Headway.init(config);
-    }
-  });
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sam Tremellen</title>
@@ -48,9 +32,16 @@
       border-bottom: 1.5px solid var(--border);
       padding: 2rem 3rem;
       display: flex;
-      align-items: baseline;
+      align-items: center;
+      justify-content: space-between;
       gap: 1.5rem;
       animation: fadeDown 0.6s ease both;
+    }
+
+    header .header-left {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
     }
 
     header h1 {
@@ -68,6 +59,27 @@
       border: 1px solid var(--border);
       padding: 0.3em 0.7em;
       border-radius: 2px;
+    }
+
+    /* — HEADWAY HEADER BADGE — */
+    .headway-float {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      border: 1.5px solid var(--border);
+      padding: 0.5em 1em;
+      border-radius: 50px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5em;
+      transition: border-color 0.15s ease, color 0.15s ease;
+      flex-shrink: 0;
+    }
+    .headway-float:hover {
+      border-color: var(--ink);
+      color: var(--ink);
     }
 
     /* — MAIN — */
@@ -317,18 +329,22 @@
 </head>
 <body>
 
- <header>
-  <h1>Sam Tremellen</h1>
-  <span class="tag">v1.0.0</span>
-  <div class="headway-badge"></div>  <!-- ADD THIS LINE -->
-</header>
+  <header>
+    <div class="header-left">
+      <h1>Sam Tremellen</h1>
+      <span class="tag">v1.0.0</span>
+    </div>
+    <div class="headway-float" id="headway-trigger">
+      ✦ <span>What's new</span>
+    </div>
+  </header>
 
   <main>
 
     <!-- Hero -->
     <section class="hero">
-      <p class="section-label">Sam T Test</p>
-      <p>A blank canvas, ready for whatever comes next.</p>
+      <p class="section-label">Sam T test</p>
+      <p>Check out the what's new button in the top right corner of the screen</p>
     </section>
 
     <!-- Status -->
@@ -370,6 +386,14 @@
   </footer>
 
   <div id="toast"></div>
+
+  <script>
+    var HW_config = {
+      selector: "#headway-trigger",
+      account:  "yEPaOJ"
+    }
+  </script>
+  <script async src="https://cdn.headwayapp.co/widget.js"></script>
 
   <script>
     const logEl = document.getElementById('log');
@@ -415,13 +439,8 @@
       document.getElementById('clock').textContent =
         new Date().toLocaleTimeString('en-AU', { hour12: false });
     }
-    <script src="//cdn.headwayapp.co/widget.js"></script>
-<script>
-  var config = {
-    selector: ".headway-badge",
-    account: "yEPaOJ"
-  };
-  Headway.init(config);
-</script>
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
 </body>
 </html>
